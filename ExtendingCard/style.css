@@ -1,0 +1,62 @@
+html,body{
+    margin: 0;
+    padding: 0;
+
+    width: 100%;
+    height: 100%;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: bisque;
+}
+
+.contenedor{
+    width: 100%;
+    height: 50%;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+h3{
+    color: white;
+}
+.active{
+    width: 50%;
+    height: 100%;
+}
+
+.carta{
+    height:50vh;
+    width: 300px;
+
+    border-radius: 20px;
+
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+.carta h3{
+    opacity: 0;
+
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+}
+.carta.active{
+    width: 500px;
+}
+
+.carta.active h3{
+    opacity: 1;
+}

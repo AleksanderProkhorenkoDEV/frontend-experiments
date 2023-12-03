@@ -1,0 +1,38 @@
+.contenedor-global{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    background-color: beige;
+}
+.flecha-izquierda, .flecha-derecha{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+fieldset{
+    display: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    font-family: inherit;
+    vertical-align: baseline;
+    line-height: 1;
+    color: inherit;
+}
+.campoActivo{
+    display: flex;
+
+}
+.imagen{
+    flex: 8;
+    display: flex;
+    flex-wrap: wrap
+}
+.fieldset img {
+    width: 100%;
+    max-height: 80%;
+}

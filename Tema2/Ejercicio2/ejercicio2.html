@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Ejercicio 2</title>
+    </head>
+    <body>
+        <form name="formulario" id="formulario">
+            <label>Introduce la fecha del minuendo</label>
+            <!--
+                Para evitar la introduccion de fechas en formatos incorrectos y ahorrarnos comprorlo, ponemos que el input sea de tipo Date y obligatorio para que no pueda enviar el formulario vacio
+            -->
+            <input type="date" name="primeraFecha" id="primeraFecha" required>
+            <br>
+            <label>Introduce la fecha del sustraendo</label>
+            <input type="date" name="segundaFecha" id="segundaFecha" required>
+            <br>
+            <input type="submit" value="enviar">
+        </form>
+        <script src="ejercicio2.js"></script>
+    </body>
+</html>

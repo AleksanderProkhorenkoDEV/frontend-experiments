@@ -1,0 +1,75 @@
+div{
+    margin: 0;
+    padding: 0;
+}
+body{
+    margin: 0;
+    padding: 0;
+
+    width: 100%;
+    height: 100%;
+}
+.contenedor-global{
+    width: 100%;
+    height: 100vh;
+}
+.hero{
+    width: 100%;
+    height: 100vh;
+
+    background-image: url(vista-3d-planeta-tierra.jpg);
+    background-size: cover;
+
+    position: relative;
+}
+
+header{
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+}
+.logo{
+    width: 100%;
+    height: 100%;
+    background-image: url(logo-cosmos.svg);
+    background-repeat: no-repeat;
+    flex: 1;
+}
+.menu{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+
+}
+
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+}
+
+
+li{
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+}
+
+.itemnav{
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: all 300ms ease-in-out;
+}
+.itemnav:hover{
+    color: grey;
+}

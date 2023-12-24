@@ -1,0 +1,64 @@
+.colapsado{
+    width: 40px;
+    height: 50px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    cursor: pointer;
+}
+.esconder{
+    display: none;
+}
+.linea{
+    height: 4px;
+    width: 100%;
+
+    transition: all 300ms ease-in-out;
+
+    background-color: white;
+}
+
+.rotar45{
+    transform: rotate(45deg) translateY(7px) translateX(9px);
+    
+}
+.eliminar{
+    display: none;
+}
+.rotar-45{
+    transform: rotate(-45deg) translateY(-9px) translateX(11px);
+}
+
+.lista-menu{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    width: 100%;
+    height: 100%;
+}
+
+.lista-menu-colapsado{
+    display: flex !important;
+    flex-direction: column;
+
+    position: absolute;
+    width: 100%;
+    height: 90%;
+    left: 0;    
+    right: 0;
+    bottom: 0;
+
+    background-color: rgba(0, 0, 0, .7);
+}
+@media screen and (max-width:750px){
+    .colapsado{
+        display: flex;
+    }
+    .lista-menu{
+        display: none;
+    }
+}

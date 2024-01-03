@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&display=swap');
+
+/*
+    -------------------------------------------
+        RESET BUTTON STYLE
+    -------------------------------------------
+*/
+button {
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    overflow: visible;
+
+    background: transparent;
+
+    /* inherit font & color from ancestor */
+    color: inherit;
+    font: inherit;
+
+    /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+    line-height: normal;
+
+    /* Corrects font smoothing for webkit */
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
+
+}
+
+/*
+    -------------------------------------------
+        PSEUDO VARIABLES
+    -------------------------------------------
+
+*/
+:root {
+    --mainSize: clamp(1rem, 0.8333rem + 0.5556vw, 1.5rem);
+    --mainTitleSize: clamp(1.5rem, 1.3333rem + 0.5556vw, 2rem);
+}
+
+/*
+    -------------------------------------------
+       GENERAL STYLES
+    -------------------------------------------
+*/
+body {
+    margin: 0;
+    padding: 0;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: var(--mainSize);
+    font-weight: 200;
+
+    background-color: whitesmoke;
+
+    width: 100%;
+    height: 100%;
+}
+
+.contenedor {
+    width: 50%;
+    height: 100%;
+
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.titulo {
+    font-size: var(--mainTitleSize);
+    font-weight: 400;
+}
+
+.faq {
+    width: 60%;
+    height:auto;
+
+    display: flex;
+    flex-direction: column;
+
+    background-color: azure;
+    border-radius: 5px;
+
+
+    overflow: hidden;
+}
+.cabecera-faq{
+    display: flex;
+}
+.titulo-faq{
+    flex: 9;
+    padding-left: 2rem;
+}
+
+.boton-faq{
+    flex: 1;
+    height: auto;
+
+    cursor: pointer;
+}
+span{
+    cursor: pointer;
+}
+.contenedor-respuesta{
+    width: 100%;
+    height: auto;
+}
+/*
+    -------------------------------------------
+        Activate or deactivate elements
+    -------------------------------------------
+*/
+.active{
+    display: block !important;
+}
+.desactivar{
+    display: none !important;
+}
+.texto-faq{
+    display: none;
+
+    width: 70%;
+    margin: 0 auto;
+
+    padding: 1rem;
+}
+.cerrar-faq{
+    display: none;
+}
+
+/*
+    -------------------------------------------
+        Activate or deactivate elements
+    -------------------------------------------
+*/
+
+@media screen and (max-width:800px) {
+    .contenedor{
+        width: 70%;
+    }
+}
+@media screen and (max-width:500px) {
+    .contenedor{
+        width: 100%;
+    }
+}

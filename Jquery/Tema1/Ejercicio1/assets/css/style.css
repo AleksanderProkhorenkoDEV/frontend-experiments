@@ -1,0 +1,21 @@
+.container{
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.lista{
+    height: 50%;
+    width: 50%;
+
+}
+.acciones{
+    height: 5%;
+    width: fit-content;
+
+    display: flex;
+    justify-content: space-around;
+}

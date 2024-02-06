@@ -1,27 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio API TECH</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    
-</head>
-<body>
-    <div class="botones">
-        <div class="btn" id="dog">DOG</div>
-        <div class="btn" id="cat">CAT</div>
-    </div>
-    <div class="respuesta">
-        <div  class="divRespuesta">
-            <h2>IMAGEN DEL PERRO</h2>
-            <img src="" id="contenidoPerro"  width="300px" height="300px">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <title>ASYN API FETCH</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="dog">
+                <h2>See a dog</h2>
+                <div class="imagen">
+                    <img src="" >
+                </div>
+                <button>CLICK HERE !</button>
+            </div>
+            <div class="cat">
+                <h2>See a cat</h2>
+                <div class="imagen">
+                    <img src="" >
+                </div>
+                <button>CLICK HERE !</button>
+            </div>
         </div>
-        <div  class="divRespuesta">
-            <h2>IMAGEN DEL GATO</h2>
-            <img src="" id="contenidoGato" width="300px" height="300px">
-        </div>
-    </div>
-    <script src="assets/js/script.js"></script>
-</body>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="assets/js/script.js"></script>
+    </body>
 </html>

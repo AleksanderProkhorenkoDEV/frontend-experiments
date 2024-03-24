@@ -14,7 +14,8 @@ export const App = () => {
       <h1 className={'h1 main_header'}>Your Whises</h1>
       <div className={'table_components'}>
         <div className={'comp_addwhises'}>
-          <input type="text" placeholder='Insert your whise' />
+          <label htmlFor="addwhise">Insert here your whises</label>
+          <input type="text" placeholder='Insert your whise' name="addwhise" />
           <button type='button'>Add</button>
         </div>
         <div className={'comp_whislist'}>
@@ -24,15 +25,16 @@ export const App = () => {
               <li key={`wish_${text}`}>
                 <p htmlFor={`wish_${text}`} className={'text-li'}>
                   <input type="checkbox" id={`wish${text}`} checked={done} />
-                  {text}
+                  {done ? text: <del className='whise-done'>{text}</del>}
                 </p>
+                
               </li>
             ))}
           </ul>
         </div>
       </div>
       <div>
-        <button type='button'>Archive whises done</button>
+        <button type='button' className='button-archive'>Archive whises done</button>
       </div>
     </div>
 

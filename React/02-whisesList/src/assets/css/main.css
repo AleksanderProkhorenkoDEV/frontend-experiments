@@ -1,18 +1,38 @@
-*{
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Edu+NSW+ACT+Foundation:wght@400..700&family=Monsieur+La+Doulaise&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
     box-sizing: border-box;
 
     padding: 0;
     margin: 0;
+
+    font-family: "Edu NSW ACT Foundation", cursive;
+    font-size: 20px;
 }
-ul{
+
+ul {
     margin: 0;
     padding: 0;
     list-style: none;
 }
 
-.main_box{
-    border: 1px solid red;
+button {
+    background-color: transparent;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    font: inherit;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+}
 
+
+button:focus {
+    outline: none;
+}
+
+.main_box {
     width: 100%;
     height: 100vh;
 
@@ -21,50 +41,106 @@ ul{
     align-items: center;
     justify-content: center;
     gap: 3rem;
+
+    background-color: #333;
+    color: white;
 }
 
-h1{
+h1 {
+    color: #029cd9;
     text-transform: uppercase;
-    background-color: white;
-    padding: .4rem;
+    padding: .4rem .7rem;
 
     width: fit-content;
-
-    border: 1px solid blue;
 }
 
-.table_components{
-    border: 1px solid pink;
-
+.table_components {
     width: 70%;
     height: 50%;
 
     display: flex;
+    border: 1px solid whitesmoke;
 }
-.comp_addwhises{
-    border: 1px solid orange;
+
+.comp_addwhises {
+    display: flex;
     flex: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+
+    border: 1px solid whitesmoke;
 }
-.comp_whislist{
+
+input[type='text'] {
+    width: 80%;
+
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid white;
+
+    padding: .6rem;
+
+}
+
+input[type='text']:focus {
+    border-bottom: 1px solid #029cd9;
+    color: white;
+    outline: none;
+    box-shadow: none;
+}
+
+.comp_addwhises>button {
+    width: 80%;
+
+    border: 1px solid #029cd9;
+    padding: .3rem;
+
+    cursor: pointer;
+    transition: background-color .2s ease;
+}
+.comp_addwhises>button:hover{
+    background-color: #029cd9;
+}
+.comp_whislist {
     border: 1px solid #333;
     flex: 2;
 
     position: relative;
 }
-.title_comp_position{
+
+.title_comp_position {
     position: absolute;
-    top: -30px;
-    left: 250px;
+    top: -25px;
+    left: 38%;
+
+    background-color: #333;
 }
-.list_wishes{
+
+.list_wishes {
     margin-top: 4rem;
     margin-left: 2rem;
 }
-.list_wishes li{
+
+.list_wishes li {
     margin-bottom: .7rem;
 }
-.text-li{
+
+.text-li {
     display: flex;
     flex-wrap: nowrap;
     gap: .5rem;
+}
+
+.button-archive{
+    
+    border: 1px solid #029cd9;
+    padding: .5rem;
+
+    cursor: pointer;
+    transition: background-color .2s ease;
+}
+.button-archive:hover{
+    background-color: #029cd9;
 }

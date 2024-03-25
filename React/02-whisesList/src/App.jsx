@@ -1,37 +1,39 @@
-import React from 'react'
 import './assets/css/main.css'
+import React, { useState } from 'react'
+import Addwhise from './components/addWhise/Addwhise'
+import Listwhise from './components/listWhise/ListWhise'
 
 
 const whisesList = [
-  { text: 'Learn React', done: true },
-  { text: 'Its easy', done: false }
+  {text: 'Learn React', done:true},
+  {text: 'Finish my second app with React', done:false}
 ]
 
 export const App = () => {
+
+  const [whises, setWhises] = useState(whisesList)
+
+  //We collect the whises that was modified by the index of the array, 
+  //we create a copy of the list and modify the done state and use the set to update the list
+  const changeWhisesDone = (index, done) => {
+    const updateWhises = [...whises]
+    updateWhises[index].done = done
+    setWhises(updateWhises)
+  }
+
+
   return (
 
     <div className={'main_box'}>
       <h1 className={'h1 main_header'}>Your Whises</h1>
       <div className={'table_components'}>
-        <div className={'comp_addwhises'}>
-          <label htmlFor="addwhise">Insert here your whises</label>
-          <input type="text" placeholder='Insert your whise' name="addwhise" />
-          <button type='button'>Add</button>
-        </div>
-        <div className={'comp_whislist'}>
-          <h1 className={'title_comp_position'}>List of your wishes</h1>
-          <ul className={'list_wishes'}>
-            {whisesList.map(({ text, done }) => (
-              <li key={`wish_${text}`}>
-                <p htmlFor={`wish_${text}`} className={'text-li'}>
-                  <input type="checkbox" id={`wish${text}`} checked={done} />
-                  {done ? text: <del className='whise-done'>{text}</del>}
-                </p>
-                
-              </li>
-            ))}
-          </ul>
-        </div>
+        <Addwhise 
+          onNewWhise={wish => setWhises([...whises, wish])} 
+        />
+        <Listwhise 
+          whisesList={whises}
+          onChangeDone = {changeWhisesDone}
+        />
       </div>
       <div>
         <button type='button' className='button-archive'>Archive whises done</button>

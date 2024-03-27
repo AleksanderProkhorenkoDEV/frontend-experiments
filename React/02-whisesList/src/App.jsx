@@ -5,8 +5,8 @@ import Listwhise from './components/listWhise/ListWhise'
 
 
 const whisesList = [
-  {text: 'Learn React', done:true},
-  {text: 'Finish my second app with React', done:false}
+  {done:true, text: 'Learn React'},
+  {done:false, text: 'Finish my second app with React'}
 ]
 
 export const App = () => {
@@ -21,6 +21,10 @@ export const App = () => {
     setWhises(updateWhises)
   }
 
+  const archiveWhise = () => {
+    const updateWhise = [...whises].filter(wish => wish.done === false)
+    setWhises(updateWhise)
+  }
 
   return (
 
@@ -36,7 +40,7 @@ export const App = () => {
         />
       </div>
       <div>
-        <button type='button' className='button-archive'>Archive whises done</button>
+        <button type='button' className='button-archive' onClick={archiveWhise}>Archive whises done</button>
       </div>
     </div>
 

@@ -1,0 +1,27 @@
+.container{
+    border: 1px solid black;
+
+    width: 150px;
+    height: 200px;
+    text-align: center;
+
+
+    background-image: url('../images/road-house-cartel.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.app-container{
+    height: 100vh;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    z-index: 1;
+
+    color: white;
+}

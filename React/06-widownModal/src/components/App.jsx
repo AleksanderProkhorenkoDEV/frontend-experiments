@@ -19,7 +19,6 @@ const App = () => {
                     isActive={isOpen}
                 />
             </article>
-            
         </>
     )
 }

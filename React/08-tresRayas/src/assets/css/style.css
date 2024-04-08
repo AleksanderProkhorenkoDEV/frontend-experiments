@@ -1,0 +1,36 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    color: white;
+}
+
+section{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+    gap: 1rem;
+
+    border: 1px solid red;
+
+    width: 200px;
+    height: 200px;
+}
+
+.cell{
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid white;
+
+    cursor: pointer;
+}
+.cell.active{
+    background-color: rgb(0, 110, 255);
+    border: 0;
+}

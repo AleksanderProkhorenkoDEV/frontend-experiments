@@ -1,7 +1,7 @@
-import '../css/style.css'
-
-import Cell from './Cell'
 import { useState } from 'react'
+import Winner from './Winner'
+import '../css/style.css'
+import Cell from './Cell'
 
 const TURNS = {
     x: "X",
@@ -15,53 +15,80 @@ const App = () => {
     const [winer, setWiner] = useState(null)
 
     const updateBoard = (index) => {
-        if (board[index]) return
+        if (board[index] || winer) return
 
         const newBoard = [...board]
         newBoard[index] = turn
         setBoard(newBoard)
+
         const result = checkWiner(newBoard, index)
+
+        if (result) {
+            setWiner(result)
+        }else if(checkEndGame(newBoard)){
+            setWiner(false)
+        }
+
         const newTurn = turn === TURNS.x ? TURNS.o : TURNS.x
         setTurn(newTurn)
 
+
     }
 
-    const checkWiner = (board, index) => {
-        // console.log(index);
-        console.log(board);
-        let hozRight = checkHorizRigth(board, index);
-        let hozIzq = checkHorizLeft(board, index);
-        let vertical = checkVertical(board);
-        let diagonalMain = checkDiagonalMain(board, index);
-        let diagonalSecondary = checkDiagonalSecondary(board, index);
+    const checkWiner = (newboard, index) => {
 
-        console.log('gana derecha', hozRight)
-        console.log('gana izquierda', hozIzq)
-        console.log('gana vertical', vertical)
-        console.log('gana diagonal main', diagonalMain)
-        console.log('gana diagonal secondary', diagonalSecondary)
-    }
+        let hozRight = checkHorizRight(newboard, index);
+        let hozIzq = checkHorizLeft(newboard, index);
+        let vertical = checkVertical(newboard);
+        let diagonalMain = checkDiagonalMain(newboard);
+        let diagonalSecondary = checkDiagonalSecondary(newboard);
 
-    const checkHorizRigth = (board, index) => {
-        const letter = board[index]
-        let counter = 0
-        for (let i = index; (i < board.length) && (i <= index + 2); i++) {
-            if (letter == board[i]) counter++
+        if (hozIzq || hozRight || vertical || diagonalMain || diagonalSecondary) {
+            return newboard[index];
+        } else {
+            return null
         }
-
-        if (counter == 3) return true
     }
-
+    const checkEndGame = (newBoard) => {
+        return newBoard.every( (cells) => cells != null)
+    }
+    const checkHorizRight = (board, index) => {
+        const letter = board[index];
+        let counter = 1; // Empezamos en 1 porque ya tenemos una marca en el índice actual
+        let currentIndex = index + 1; // Comenzamos a verificar desde el siguiente índice
+    
+        // Verificar hacia la derecha
+        while (currentIndex % 3 !== 0) { // Mientras no alcancemos el final de la fila
+            if (board[currentIndex] === letter) {
+                counter++;
+                if (counter === 3) return true; // Si encontramos tres marcas consecutivas, es una línea ganadora
+            } else {
+                return // Si encontramos una marca diferente, detenemos la verificación en esta dirección
+            }
+            currentIndex++;
+        }
+    
+        return false; // No hay línea ganadora en esta dirección
+    };
+    
     const checkHorizLeft = (board, index) => {
-        const letter = board[index]
-        let counter = 0
-        for (let i = index; (i >= 0) && (i >= index - 2); i--) {
-            if (letter == board[i]) counter++
+        const letter = board[index];
+        let counter = 1; // Empezamos en 1 porque ya tenemos una marca en el índice actual
+        let currentIndex = index - 1; // Comenzamos a verificar desde el índice anterior
+    
+        // Verificar hacia la izquierda
+        while (currentIndex % 3 !== 2) { // Mientras no alcancemos el inicio de la fila
+            if (board[currentIndex] === letter) {
+                counter++;
+                if (counter === 3) return true; // Si encontramos tres marcas consecutivas, es una línea ganadora
+            } else {
+                return // Si encontramos una marca diferente, detenemos la verificación en esta dirección
+            }
+            currentIndex--;
         }
-
-        if (counter == 3) return true
-    }
-
+    
+        return false; // No hay línea ganadora en esta dirección
+    };
     const checkVertical = (board) => {
         for (let col = 0; col < 3; col++) {
             const cell1 = board[col];
@@ -72,30 +99,29 @@ const App = () => {
         }
     }
 
-    const checkDiagonalMain = (board, index) => {
-        let letter = board[index]
-        let counter = 0
-        for (let i = 0; i < board.length; i += 4) {
-            if (letter == board[i]) counter++
-            console.log('bucle 2')
-        }
-
-        if (counter == 3) return true
+    const checkDiagonalMain = (board) => {
+        const diagonal = [board[0], board[4], board[8]];
+        const firstCell = diagonal[0];
+        if (!firstCell) return false; // La diagonal secundaria está vacía
+        return diagonal.every(cell => cell === firstCell);
 
     }
 
-    const checkDiagonalSecondary = (board, index) => {
-        let letter = board[index]
-        let counter = 0
-        for (let i = 2; i < board.length ; i += 2) {
-            if (letter == board[i]) counter++
-            console.log('bucle 2')
-        }
-        if (counter == 3) return true
+    const checkDiagonalSecondary = (board) => {
+        const diagonal = [board[2], board[4], board[6]];
+        const firstCell = diagonal[0];
+        if (!firstCell) return false; // La diagonal secundaria está vacía
+        return diagonal.every(cell => cell === firstCell);
+    }
+
+    const resetBoard = () => {
+        setBoard(Array(9).fill(null))
+        setTurn(TURNS.x)
+        setWiner(null)
     }
 
     return (
-        <main>
+        <main className='padre-modal'>
             <h1>Tic tac toe</h1>
             <section>
                 {
@@ -116,6 +142,13 @@ const App = () => {
                 <Cell isSelected={turn === TURNS.x}>{TURNS.x}</Cell>
                 <Cell isSelected={turn === TURNS.o}>{TURNS.o}</Cell>
             </section>
+            {
+                winer != null && <Winner
+
+                    winner={winer}
+                    resetBoard={resetBoard}
+                />
+            }
         </main>
     )
 }

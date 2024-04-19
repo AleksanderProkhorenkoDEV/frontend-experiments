@@ -1,0 +1,31 @@
+/* Estilos para la tabla */
+.table {
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+    /* Borde de la tabla */
+}
+
+/* Estilos para las celdas del encabezado */
+.th {
+    padding: 8px;
+    text-align: left;
+    background-color: #242424;
+    /* Color de fondo del encabezado */
+    border-bottom: 1px solid #ddd;
+    /* Borde inferior del encabezado */
+}
+
+/* Estilos para las celdas de datos */
+.td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #1a1919;
+    /* Borde inferior de las celdas de datos */
+}
+
+/* Estilos para las filas impares */
+.tbody tr:nth-child(odd) {
+    background-color: #1a1919;
+    /* Color de fondo de las filas impares */
+}

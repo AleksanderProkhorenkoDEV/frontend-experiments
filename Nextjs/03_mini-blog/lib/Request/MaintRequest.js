@@ -2,7 +2,7 @@ import API from '../../src/constant/API'
 
 export const indexAuthor = async () => {
     const response = await fetch(`${API}authors/get`)
-    return await response.json()
+    // return await response.json()
 }
 
 export const getAuthor = async (endPoint, id) => {
@@ -26,3 +26,18 @@ export const editAuthor = async (endPoint, params, id) => {
     }
 };
 
+export const register = async (endPoint, params) => {
+    try{
+        const response = await fetch(`${API}${endPoint}`, {
+            method: 'POST',
+            headers:{
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(params)
+        })
+
+        return response;
+    } catch (error){
+        return error;
+    }
+}

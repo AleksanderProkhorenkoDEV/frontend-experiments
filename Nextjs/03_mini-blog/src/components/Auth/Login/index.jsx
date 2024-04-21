@@ -1,6 +1,16 @@
-const LoginForm = ( ) => {
-    return(
-        <h1>This is a login form</h1>
+import { loginUser } from "../../../../lib/ServerAction/actions"
+
+const LoginForm = () => {
+    return (
+        <>
+            <form action={loginUser}>
+                <label htmlFor="">email*</label>
+                <input type="email" name="email" />
+                <label htmlFor="">password</label>
+                <input type="password" name="password" />
+                <button type="submit">login</button>
+            </form>
+        </>
     )
 }
 

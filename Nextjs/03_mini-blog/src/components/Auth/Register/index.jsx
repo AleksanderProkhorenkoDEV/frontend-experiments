@@ -2,7 +2,6 @@ import { registerUser } from "../../../../lib/ServerAction/actions"
 
 const RegisterForm = ( ) => {
 
-
     return(
         <form action={registerUser}>
             <label htmlFor="">Display name</label>

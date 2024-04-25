@@ -1,0 +1,56 @@
+/* Estilo general */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* Formulario de validación */
+#validacion {
+    background-color: #fff;
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Etiquetas de formulario */
+label {
+    font-weight: bold;
+}
+
+/* Espaciado entre elementos del formulario */
+br {
+    margin-bottom: 10px;
+}
+
+/* Campos de entrada de texto */
+input[type="text"],
+input[type="number"],
+input[type="email"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Botón de enviar */
+input[type="submit"] {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Estilo al pasar el cursor sobre el botón de enviar */
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}

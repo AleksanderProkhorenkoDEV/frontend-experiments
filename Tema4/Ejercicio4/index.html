@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form id="validacion">
+        <label>Introduzca su nombre</label>
+        <br>
+        <input type="text" required id="nombre">
+        <br>
+        <label>Introduzca su edad</label>
+        <br>
+        <input type="number" min="18" required id="edad" >
+        <br>
+        <label>Introduzca su genero</label>
+        <br>
+        <select name="opciones" id="seleccion" required>
+            <option value="masculino">Macho pelo en pecho</option>
+            <option value="femenino">Mujer pelo en bigote</option>
+        </select>
+        <br>
+        <label>Introduzca su numero de telefono</label>
+        <br>
+        <input type="text" required id="nTelefono">
+        <br>
+        <label>Introduzca su Email</label>
+        <br>
+        <input type="email" required id="email">
+        <br>
+        <input type="submit" value="Enviar">
+    </form>
+    <script src="main.js"></script>
+</body>
+</html>

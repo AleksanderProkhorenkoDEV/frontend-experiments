@@ -1,0 +1,16 @@
+.contenedor{
+    display: flex;
+    gap: 2rem;
+}
+
+table{
+    cursor: pointer;
+}
+
+.error{
+    border: 1px solid red;
+}
+
+.resaltarFila{
+    background-color: yellow;
+}

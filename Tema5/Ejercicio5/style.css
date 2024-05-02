@@ -1,0 +1,16 @@
+.contenedor{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+.contenedorIMG{
+    display: none;
+}
+
+
+.contenedorIMG.activo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

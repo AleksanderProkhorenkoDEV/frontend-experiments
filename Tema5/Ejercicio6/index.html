@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ejercicio 6 - Tema 5</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <form id="validacion">
+            <label>Introduzca su nombre *</label>
+            <br>
+            <input type="text" id="nombre" required>
+            <br>
+            <label>Introduzca su edad *</label>
+            <br>
+            <input type="number" min="18" id="edad" required>
+            <br>
+            <label>Introduzca su genero *</label>
+            <br>
+            <select name="opciones" id="seleccion" required>
+                <option value="masculino">Macho pelo en pecho</option>
+                <option value="femenino">Mujer pelo en bigote</option>
+            </select>
+            <br>
+            <label>Introduzca su numero de telefono *</label>
+            <br>
+            <input type="text" id="nTelefono" required>
+            <br>
+            <label>Introduzca su Email *</label>
+            <br>
+            <input type="email" id="email" required>
+            <br>
+            <label>Introduce la ciudad en la que vives</label>
+            <br>
+            <input type="text" id="ciudad">
+            <br>
+            <label for>Introduce el pais de residencia</label>
+            <br>
+            <input type="text" id="pais">
+            <br>
+            <label for="">Introduce la contraseña</label>
+            <br>
+            <input type="password" id="contraseña1">
+            <br>
+            <label for="">Introduce de nuevo la contraseña</label>
+            <br>
+            <input type="password" id="contraseña2">
+            <br>
+            <label for="">Aceptas los terminos y requisitos:</label>
+            <br>
+            <input type="checkbox" id="cuadrado" required>
+            <br>
+            <button type="submit" id="crear" disabled>Crear Cuenta</button>
+            <button type="submit" id="borrar">Reset Formulario</button>
+        </form>
+        <script src="script.js"></script>
+    </body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen Noviembre - Realizado por Aleksander Trujillo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="contenedor">
+        <h1>Formulario Factura</h1>
+        <form action="" id="formulario">
+            <label for="">Introduzca el nombre de la empresa</label>
+            <br>
+            <input type="text" id="nombre_empresa">
+            <br>
+            <label for="">Introduzca el CIF de la empresa</label>
+            <br>
+            <input type="text" id="cif">
+            <br>
+            <label for="">Introduzca el nombre del cliente</label>
+            <br>
+            <input type="text" id="nombre_cliente">
+            <br>
+            <label for="">Introduzca el IVA</label>
+            <br>
+            <input type="text" name="" id="IVA">
+            <br>
+
+            <br>
+            <div id="inputsProductos">
+                <label for="">Producto</label>
+                <input type="text"  id="nombreProducto" required>
+                <label for="">Cantidad</label>
+                <input type="text" id="cantidad">
+                <label for="">Precio</label>
+                <input type="text" id="precio">
+            </div>
+            <br>
+            <br>
+            <button type="button" id="AñadirLinea">Añadir un producto más</button>
+            <br>
+            <button type="button" id="submit">Crear Factura</button>
+        </form>
+        <p id="facturaTotal">El precio total es: </p>
+    </div>
+    
+    <script type="module" src="main.js"></script>
+    <script type="module" src="formularioFactura.js"></script>
+</body>
+
+</html>

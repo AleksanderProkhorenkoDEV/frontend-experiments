@@ -1,0 +1,24 @@
+.carrusel{
+    width: 100%;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid purple;
+}
+.wrapperCarrusel {
+    display: flex;
+    gap: 2rem;
+    overflow: hidden; 
+    width: 1300px; 
+    height: 500px;
+}
+
+.cardContainer {
+    display: flex;
+    transition: transform 0.5s ease; /* Agregar transición para suavizar el desplazamiento */
+    gap: 1rem; 
+}

@@ -1,0 +1,44 @@
+.poster {
+    border: 1px solid red;
+
+    flex: 0 0 auto;
+    /* Las tarjetas no deben crecer más allá de su tamaño original */
+    width: 300px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+
+    padding: 1rem;
+
+}
+
+.imgCarrusel {
+    width: 100%;
+    height: 100%;
+
+    flex: 2;
+}
+
+.active {
+    border: 1px solid red;
+
+    flex: 0 0 auto;
+    width: 300px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+
+    padding: 1rem;
+    
+    opacity: 1;
+}
+
+.parrafo{
+    flex: 1;
+}

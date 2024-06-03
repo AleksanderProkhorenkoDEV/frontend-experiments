@@ -5,7 +5,7 @@ export const getMovies = async () => {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhZmI5MDllNDJhNjRkMmM5OTQ5YTg0Yzk4OGQ1YzE2MCIsInN1YiI6IjY1YzYyNjExMmVmZTRlMDE2MjUyMTdkNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.5DDW8yqUgiF_CozoQe2WSPLHo7DJ65Q33tLRoT7943E'
+            'Authorization': 'Bearer token'
         },
     })
     const data = await resposne.json()

@@ -1,18 +1,18 @@
 "use server"
 
-export const login = async (params: any) => {
+import { signIn } from "next-auth/react"
+
+export const auth_login = async (formData: any) => {
+    const rawFormData = {
+        email: formData.get('email'),
+        password: formData.get('password'),
+    }
+    console.log('DATOS FORM', rawFormData)
 
     const res = await signIn("credentials", {
-        redirect: false,  // Evitar la redirección automática
-        ...params
+        ...rawFormData,
+        redirect: false
     })
 
-    console.log(res);
-
-    // if (res?.error) {
-    //     console.error("Error al iniciar sesión:", res.error)
-    // } else {
-    //     // Redirigir a la página deseada después de un inicio de sesión exitoso
-    //     window.location.href = "/dashboard"
-    // }
+    console.log(await res)
 }

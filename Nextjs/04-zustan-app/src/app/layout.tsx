@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { CounterStoreProvider } from "@/providers/counter-store-provider";
 
 export const metadata: Metadata = {
   title: "Zustand Context",
@@ -13,8 +14,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
-        {children}
+      <body className="bg-gray-300">
+        <CounterStoreProvider>
+          {children}
+        </CounterStoreProvider>
       </body>
     </html>
   );

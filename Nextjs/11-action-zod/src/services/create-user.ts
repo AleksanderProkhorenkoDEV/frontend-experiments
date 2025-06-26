@@ -34,5 +34,5 @@ export const createUser = async (prevState: FormState | undefined, formData: For
         };
     }
 
-    return { errors: undefined }; 
+    return { errors: undefined };
 }

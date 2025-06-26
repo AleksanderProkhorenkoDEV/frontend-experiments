@@ -1,36 +1,45 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📝 Formulario con Validación en Server Action (Next.js + Zod)
 
-## Getting Started
+Este proyecto incluye una página en Next.js (`page.tsx`) con un formulario controlado y validado usando **Server Actions** y la librería de validación **Zod**. La lógica de validación se realiza completamente del lado del servidor para garantizar mayor seguridad y consistencia.
 
-First, run the development server:
+## 🚀 Tecnologías utilizadas
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- [Next.js 15](https://nextjs.org/)
+- Server Actions
+- [Zod](https://zod.dev/)
+- TypeScript
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📄 Estructura del Formulario
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+El formulario contiene **4 campos** obligatorios:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. `name` - Nombre del usuario
+2. `email` - Correo electrónico
+3. `password` - Contraseña
+4. `password_confirmation` - Confirmación de la contraseña
 
-## Learn More
+## ✅ Validaciones
 
-To learn more about Next.js, take a look at the following resources:
+Las validaciones se implementan con Zod en el archivo `server action`:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```ts
+const schema = z.object({
+  name: z.string().min(3).max(50),
+  email: z.string().email(),
+  password: z.string().min(3).regex(/[A-Za-z][1-9]/g),
+  password_confirmation: z.string().min(3).regex(/[A-Za-z][1-9]/g),
+}).refine((data) => {
+  data.password === data.password_confirmation
+}, {
+  message: "Password don't match",
+});
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+🧪 Cómo probar
+Clona el repositorio.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Asegúrate de tener Next.js configurado.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Ejecuta el proyecto con pnpm dev o npm run dev.
+
+Abre el navegador en http://localhost:3000.

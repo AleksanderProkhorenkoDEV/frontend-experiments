@@ -30,22 +30,22 @@ export const CreateForm = () => {
         <label htmlFor="name" className="flex flex-col gap-2">
             Enter your name
             <input type="text" max={254} inputMode="text" id="name" name="name" placeholder="Enter a valid name" className="border border-gray-400/40 rounded-lg p-2" />
-            <p aria-live="polite">{state?.errors?.name}</p>
+            <p aria-live="polite" className="text-red-400">{state?.errors?.name}</p>
         </label>
         <label htmlFor="email" className="flex flex-col gap-2">
             Enter your email
             <input type="email" max={254} inputMode="email" id="email" name="email" placeholder="Enter a valid email: example@gmail.es" className="border border-gray-400/40 rounded-lg p-2" />
-            <p aria-live="polite">{state?.errors?.email}</p>
+            <p aria-live="polite" className="text-red-400">{state?.errors?.email}</p>
         </label>
         <label htmlFor="password" className="flex flex-col gap-2">
             Enter a password
             <input type="password" max={254} inputMode="text" id="password" name="password" placeholder="Enter a valid password" className="border border-gray-400/40 rounded-lg p-2" />
-            <p aria-live="polite">{state?.errors?.password}</p>
+            <p aria-live="polite" className="text-red-400">{state?.errors?.password}</p>
         </label>
         <label htmlFor="password_confirmation" className="flex flex-col gap-2">
             Confirm your password
             <input type="password" max={254} inputMode="text" id="password_confirmation" name="password_confirmation" placeholder="Repeat the password" className="border border-gray-400/40 rounded-lg p-2" />
-            <p aria-live="polite">{state?.errors?.password_confirmation}</p>
+            <p aria-live="polite" className="text-red-400">{state?.errors?.password_confirmation}</p>
         </label>
 
         <button

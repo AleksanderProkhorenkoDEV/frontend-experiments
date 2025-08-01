@@ -1,0 +1,20 @@
+services:
+  next-app:
+    container_name: parallel-routes
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    command: ["pnpm", "dev"]
+    env_file:
+      - .env
+    volumes:
+      - ./:/app:cached
+      - /app/node_modules
+    restart: always
+    ports:
+      - 3000:3000
+    networks:
+      - my_network
+networks:
+  my_network:
+    driver: bridge

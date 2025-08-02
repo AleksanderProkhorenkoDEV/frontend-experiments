@@ -1,16 +1,6 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import React from "react";
 
 export const metadata: Metadata = {
   title: "Parallel Routes",
@@ -19,15 +9,23 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  job,
+  employers,
 }: Readonly<{
   children: React.ReactNode;
+  job: React.ReactNode;
+  employers: React.ReactNode;
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+      <body className="h-screen">
+        <section className="w-4/6 mx-auto">
+          {children}
+          <section className="border border-gray-900 shadow-lg flex justify-between">
+            {job}
+            {employers}
+          </section>
+        </section>
       </body>
     </html>
   );

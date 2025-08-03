@@ -1,5 +1,5 @@
 const Job = () => {
-  return <h1>Job page</h1>;
+  return <h1>Posts page</h1>;
 };
 
 export default Job;

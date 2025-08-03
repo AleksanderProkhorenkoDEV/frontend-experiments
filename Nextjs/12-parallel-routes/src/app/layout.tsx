@@ -9,20 +9,20 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-  job,
+  post,
   employers,
 }: Readonly<{
   children: React.ReactNode;
-  job: React.ReactNode;
+  post: React.ReactNode;
   employers: React.ReactNode;
 }>) {
   return (
     <html lang="en">
-      <body className="h-screen">
-        <section className="w-4/6 mx-auto">
+      <body className="h-screen w-full flex items-center justify-center">
+        <section className="w-4/6 h-96 flex flex-col rounded-lg  p-4">
           {children}
-          <section className="border border-gray-900 shadow-lg flex justify-between">
-            {job}
+          <section className="shadow-lg flex justify-between gap-4 p-4 h-full rounded-b-lg">
+            {post}
             {employers}
           </section>
         </section>

@@ -1,7 +1,7 @@
 export default function Home() {
   return (
-    <section className="border border-red-900 ">
-      <h1 className="uppercase font-bold text-center">
+    <section className="p-6">
+      <h1 className="uppercase font-bold text-center text-2xl">
         Welcome again in to your Dashboard
       </h1>
       <p>

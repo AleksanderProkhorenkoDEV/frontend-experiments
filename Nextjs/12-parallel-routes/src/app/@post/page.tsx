@@ -4,7 +4,6 @@ import Link from "next/link";
 
 const JobSlot = async () => {
   const posts = await getAllPost(10);
-  await delay(1500);
   return (
     <section className=" p-6">
       <ol className="list-decimal list-inside">

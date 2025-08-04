@@ -2,7 +2,8 @@ import { getPost } from "@/actions/posts";
 import Link from "next/link";
 
 const ModalPost = async ({ params }: { params: { id: number } }) => {
-  const post = await getPost(params.id);
+  const { id } = await params;
+  const post = await getPost(id);
 
   return (
     <div className="fixed inset-0 z-50 backdrop-blur-sm bg-black/50 flex items-center justify-center p-4">

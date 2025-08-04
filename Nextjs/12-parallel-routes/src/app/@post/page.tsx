@@ -1,15 +1,19 @@
 import { getAllPost } from "@/actions/posts";
 import { delay } from "@/lib/utils";
+import Link from "next/link";
 
 const JobSlot = async () => {
   const posts = await getAllPost(10);
   await delay(1500);
   return (
-    <section className="flex-1 bg-[#80CED7] rounded-md shadow-md h-full p-4">
-      <h1 className="text-center font-bold uppercase">Post preview</h1>
+    <section className=" p-6">
       <ol className="list-decimal list-inside">
         {posts.map((post) => {
-          return <li key={post.id}>{post.title}</li>;
+          return (
+            <li key={post.id}>
+              <Link href={`/post/${post.id}`}>{post.title}</Link>
+            </li>
+          );
         })}
       </ol>
     </section>

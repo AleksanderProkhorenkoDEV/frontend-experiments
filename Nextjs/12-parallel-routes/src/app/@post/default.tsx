@@ -1,5 +1,5 @@
 const JobDefault = () => {
-  return <h1>Job Default</h1>;
+  return null;
 };
 
 export default JobDefault;

@@ -1,7 +1,9 @@
 import { getAllPost } from "@/actions/posts";
+import { delay } from "@/lib/utils";
 
 const JobSlot = async () => {
   const posts = await getAllPost(10);
+  await delay(1500);
   return (
     <section className="flex-1 bg-[#80CED7] rounded-md shadow-md h-full p-4">
       <h1 className="text-center font-bold uppercase">Post preview</h1>

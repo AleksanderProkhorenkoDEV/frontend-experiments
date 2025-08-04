@@ -3,7 +3,6 @@ import Link from "next/link";
 
 const ModalPost = async ({ params }: { params: { id: number } }) => {
   const post = await getPost(params.id);
-  console.log(post);
 
   return (
     <div className="fixed inset-0 z-50 backdrop-blur-sm bg-black/50 flex items-center justify-center p-4">
@@ -13,9 +12,7 @@ const ModalPost = async ({ params }: { params: { id: number } }) => {
           <h2 className="text-2xl font-bold text-gray-800">{post.title}</h2>
         </div>
         <div className="p-6 overflow-y-auto flex-grow">
-          <p className="text-gray-600">
-            {post.body}
-          </p>
+          <p className="text-gray-600">{post.body}</p>
         </div>
 
         {/* Footer del modal */}
@@ -27,8 +24,6 @@ const ModalPost = async ({ params }: { params: { id: number } }) => {
           >
             Close
           </Link>
-
-          <span className="text-sm text-gray-500">Post #{params.id}</span>
         </div>
       </div>
     </div>

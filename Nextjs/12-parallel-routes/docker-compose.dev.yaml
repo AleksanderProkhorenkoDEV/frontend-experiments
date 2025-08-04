@@ -8,9 +8,9 @@ services:
     env_file:
       - .env
     volumes:
-      - ./:/app:cached
+      - ./:/app
       - /app/node_modules
-    restart: always
+    restart: unless-stopped
     ports:
       - 3000:3000
     networks:

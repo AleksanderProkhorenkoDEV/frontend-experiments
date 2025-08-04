@@ -6,7 +6,7 @@ const ModalPost = async ({ params }: { params: { id: number } }) => {
   console.log(post);
 
   return (
-    <div className="fixed inset-0 z-50 backdrop-blur-sm bg-black/50 flex items-center justify-center p-4 animate-fadeIn">
+    <div className="fixed inset-0 z-50 backdrop-blur-sm bg-black/50 flex items-center justify-center p-4">
       <div className="relative bg-white rounded-xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-hidden flex flex-col">
         {/* Header del modal */}
         <div className="flex justify-between items-center p-6 border-b border-gray-100">
